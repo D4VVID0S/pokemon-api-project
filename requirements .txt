@@ -1,0 +1,8 @@
+requests
+python-dotenv
+pydantic
+requests-cache
+rich
+click
+pytest
+PySimpleGUI

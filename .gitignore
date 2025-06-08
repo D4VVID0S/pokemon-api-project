@@ -1,0 +1,29 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+env/
+venv/
+.venv/
+pokemon-api-venv/
+
+# IDE and editor folders
+.vscode/
+.idea/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# dotenv environment variables
+.env
+
+# macOS files
+.DS_Store
+
+# Cache directories
+.cache/
+pip-log.txt
