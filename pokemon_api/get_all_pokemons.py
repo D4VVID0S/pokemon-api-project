@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 import time
 
 API_BASE_URL = "https://pokeapi.co/api/v2/"
+# Maximum number of pokemon to fetch detailed data for (0 = no limit)
+MAX_POKEMONS = int(os.getenv("MAX_POKEMONS", "10"))
 
 def get_all_pokemons():
     """
@@ -48,7 +50,8 @@ def get_all_pokemons():
 
         # Fetch full details for each Pokemon
         detailed_pokemons = []
-        for entry in pokemons:
+        # Apply testing limit if set
+        for entry in (pokemons[:MAX_POKEMONS] if MAX_POKEMONS > 0 else pokemons):
             resp = requests.get(entry['url'])
             resp.raise_for_status()
             data = resp.json()
