@@ -1,4 +1,4 @@
-from pokemon_api.get_all_pokemons import get_all_pokemons
+from pokemon_api.pokemons.get_all_pokemons import get_all_pokemons
 import polars as pl
 
 def load_pokemons_to_dataframe():

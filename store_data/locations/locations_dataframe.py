@@ -1,4 +1,4 @@
-from pokemon_api.get_all_locations import get_all_locations
+from pokemon_api.locations.get_all_locations import get_all_locations
 import polars as pl
 
 def load_locations_to_dataframe() -> pl.DataFrame:
