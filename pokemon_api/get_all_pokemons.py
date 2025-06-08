@@ -6,7 +6,7 @@ import requests
 from dotenv import load_dotenv
 import time
 
-API_BASE_URL = "https://pokeapi.co/api/v2/"
+API_BASE_URL = f"https://pokeapi.co/api/v2/pokemon/"
 # Maximum number of pokemon to fetch detailed data for (0 = no limit)
 MAX_POKEMONS = int(os.getenv("MAX_POKEMONS", "10"))
 
@@ -34,15 +34,15 @@ def get_all_pokemons():
     """
 
     pokemons = []
-    next_url = f"{API_BASE_URL}/pokemon"
+    next_url = f"{API_BASE_URL}"
 
     while next_url:
-        # Seng GET request to the current page URL
+        # Send GET request to the current page URL
         response = requests.get(next_url)
         response.raise_for_status()
         data = response.json()
 
-        # Append this page's results (list of {'name', 'url'} dicts)
+        # Append this page's results
         pokemons.extend(data.get('results', []))
 
         # Update next_url to the 'next' page URL, or None if done
